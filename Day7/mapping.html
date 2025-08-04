@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Mapping Example</title>
+</head>
+<body>
+
+<h2>Click on the shapes in the image</h2>
+
+<!-- Image with usemap attribute -->
+<img src="msd.jpg" alt="Shapes" usemap="#shapesmap" width="500" height="333">
+
+<!-- Define the map -->
+<map name="shapesmap">
+    <!-- Rectangular area -->
+    <area shape="rect" coords="34,44,270,350" alt="Rectangle" href="https://www.google.com" target="_blank">
+
+    <!-- Circular area -->
+    <area shape="circle" coords="400,150,50" alt="Circle" href="https://www.wikipedia.org" target="_blank">
+
+    <!-- Polygonal area -->
+    <area shape="poly" coords="290,172,333,250,370,220,310,130" alt="Polygon" href="https://www.openai.com" target="_blank">
+</map>
+
+</body>
+</html>

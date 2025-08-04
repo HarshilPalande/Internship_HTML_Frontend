@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fortis Hospital Mulund Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap 3.4.1 CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f0f8ff;
+    }
+    .appointment-wrapper {
+      margin: 50px auto;
+      max-width: 900px;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .sidebar {
+      background-color: #009688;
+      color: whitesmoke;
+      padding: 30px 20px;
+      min-height: 100%;
+      text-align: center;
+    }
+    .sidebar h2 {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .sidebar img {
+      width: 120px;
+    }
+    .form-area {
+      padding: 30px;
+    }
+    legend {
+      font-size: 18px;
+      color: #009688;
+    }
+    .btn-primary {
+      background-color: #009688;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="appointment-wrapper row">
+  <div class="col-sm-4 sidebar">
+    <img src="fortis.png" alt="Fortis Logo">
+    <h2>Fortis Hospital</h2>
+    <h4>Mulund - Mumbai</h4>
+    <p>
+      NABH accredited, multi-specialty hospital in Mumbai offering advanced cardiac, neuro, and transplant care.
+    </p>
+    <p style="font-size: 13px;">
+      📍 Mulund Goregaon Link Road, Nahur West, Mulund(W), Mumbai 400078<br>
+      📞 Helpline: +91 22 4111 4111
+    </p>
+  </div>
+
+  <div class="col-sm-8 form-area">
+    <form>
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" class="form-control" id="fullname" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Contact Number:</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender:</label><br>
+          <label class="radio-inline"><input type="radio" name="gender"> Male</label>
+          <label class="radio-inline"><input type="radio" name="gender"> Female</label>
+          <label class="radio-inline"><input type="radio" name="gender"> Other</label>
+        </div>
+      </fieldset>
+
+      <fieldset style="margin-top: 20px;">
+        <legend>Appointment Details</legend>
+        <div class="form-group">
+          <label for="department">Department:</label>
+          <select class="form-control" id="department">
+            <option>Choose Department</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Nephrology</option>
+            <option>Orthopedics</option>
+            <option>Gastroenterology</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date:</label>
+          <input type="date" class="form-control" id="date">
+        </div>
+
+        <div class="form-group">
+          <label for="time">Preferred Time:</label>
+          <input type="time" class="form-control" id="time">
+        </div>
+
+        <div class="form-group">
+          <label for="symptoms">Symptoms:</label>
+          <textarea class="form-control" rows="3" id="symptoms" placeholder="Short description of issue"></textarea>
+        </div>
+
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Book Appointment</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

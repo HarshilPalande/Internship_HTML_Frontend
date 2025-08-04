@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#fadeOutBtn").click(function (){
+                $("#myImage").fadeOut(5000);  
+            });
+
+            $("#fadeInBtn").click(function (){
+                $("#myImage").fadeIn(5000); 
+            });
+        });
+    </script>
+
+    <style>
+        #myImage 
+        {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        button 
+        {
+            margin-right: 10px;
+        }
+    </style>
+    
+    <title>Fade In & Out</title>
+</head>
+<body style="background-color: honeydew;">
+    <h3>Fade Image</h3>
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <br><br>
+    <img id="myImage" src="CR7.jpg" alt="Sample Image">
+</body>
+</html>

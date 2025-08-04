@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MSBTE :: SUMMER 2024 EXAM RESULT</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .main-box {
+      width: 600px;
+      margin: 50px auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: white;
+    }
+
+    .header img {
+      width: 70px;
+      height: 70px;
+      margin-right: 15px;
+    }
+
+    .title h2 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .title p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .form-area {
+      background-color: #fff8cc;
+      padding: 25px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    .form-group {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: underline;
+      width: 250px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+      width: 280px;
+      padding: 6px;
+      font-size: 14px;
+      border: 1px solid #999;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .captcha-box {
+      display: flex;
+      align-items: center;
+      margin-left: 250px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+
+    .captcha-text {
+      font-size: 36px;
+      font-family: monospace;
+      color: #b30000;
+      text-decoration: line-through;
+      border: none;
+      padding: 0;
+    }
+
+    .show-btn {
+      background-color: transparent;
+      border: 2px solid #f0d800;
+      font-family: Tahoma, sans-serif;
+      font-size: 14px;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      color: black;
+    }
+
+    .show-btn span.s-part {
+      font-weight: bold;
+      color: #f0d800;
+    }
+
+    .show-btn span.rest {
+      font-weight: normal;
+      color: black;
+    }
+
+    .error {
+      display: none;
+      background-color: #ffeeee;
+      color: red;
+      padding: 10px;
+      border: 1px solid red;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-box">
+    
+    <!-- White Top Header (NO BORDER) -->
+    <div class="header">
+      <img src="logo.png" alt="MSBTE Logo">
+      <div class="title">
+        <h2>Maharashtra State Board of Technical Education</h2>
+        <p>महाराष्ट्र राज्य तंत्र शिक्षण मंडळ, मुंबई</p>
+      </div>
+    </div>
+
+    <!-- Yellow Section Form (WITH BORDER) -->
+    <div class="form-area">
+
+      <div class="form-group">
+        <label>Select Enrollment No. or Seat No.</label>
+        <select id="selectOption">
+          <option>(See Below)</option>
+          <option>Enrollment No.</option>
+          <option>Seat No.</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Enter Enrollment No. Or Seat No.</label>
+        <input type="text" id="seatInput">
+      </div>
+
+      <div class="form-group">
+        <label>Captcha</label>
+      </div>
+      <div class="captcha-box">
+        <div class="captcha-text" id="captcha">G6pYzK1</div>
+      </div>
+
+      <div class="form-group">
+        <label>Type Above Captcha Here</label>
+        <input type="text" id="captchaInput">
+      </div>
+
+      <div style="text-align: center;">
+        <button class="show-btn" onclick="checkCaptcha()">
+          <span class="s-part">S</span><span class="rest">howResult</span>
+        </button>
+      </div>
+
+      <div class="error" id="errorBox">
+        ⚠️ Your result has been kept on hold due to excessive confidence in exams.<br>
+        Please visit MSBTE office with your parents. 😂
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function generateCaptcha() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let captcha = '';
+      for (let i = 0; i < 7; i++) {
+        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return captcha;
+    }
+
+    function refreshCaptcha() {
+      document.getElementById("captcha").innerText = generateCaptcha();
+      document.getElementById("captchaInput").value = '';
+      document.getElementById("errorBox").style.display = 'none';
+    }
+
+    function checkCaptcha() {
+      const userInput = document.getElementById("captchaInput").value.trim();
+      const realCaptcha = document.getElementById("captcha").innerText.trim();
+      const errorBox = document.getElementById("errorBox");
+
+      if (userInput === realCaptcha) {
+        errorBox.style.display = 'block';
+      } else {
+        alert("❌ Incorrect captcha. Please try again.");
+        refreshCaptcha();
+      }
+    }
+
+    window.onload = refreshCaptcha;
+  </script>
+
+</body>
+</html>

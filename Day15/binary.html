@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary with Explanation</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: cyan;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 10px;
+      width: 300px;
+    }
+    .char-block {
+      border: 1px solid #0f0;
+      margin: 20px auto;
+      padding: 10px;
+      width: 90%;
+      background: #111;
+    }
+    .bulb {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 2px;
+      border-radius: 50%;
+      background: #333;
+      box-shadow: 0 0 5px #000;
+    }
+    .on {
+      background: lime;
+      box-shadow: 0 0 8px lime;
+    }
+    .label {
+      margin-top: 10px;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔠 Binary + Explanation</h1>
+
+  <p>Type a name, sentence or number:</p>
+  <input id="textInput" placeholder="Type anything...">
+  <button onclick="convertToBinary()">Convert</button>
+
+  <div id="output"></div>
+
+  <script>
+    function convertToBinary() {
+      const text = document.getElementById('textInput').value;
+      const output = document.getElementById('output');
+      output.innerHTML = '';
+
+      if (!text) {
+        alert("Please enter some text!");
+        return;
+      }
+
+      [...text].forEach(char => {
+        const ascii = char.charCodeAt(0);
+        const binary = ascii.toString(2).padStart(8, '0');
+
+        // Explanation: build powers of 2
+        let explanation = "";
+        for (let i = 0; i < 8; i++) {
+          if (binary[i] === '1') {
+            const power = 7 - i;
+            explanation += `2^${power} (${Math.pow(2, power)}) + `;
+          }
+        }
+        explanation = explanation.slice(0, -3); // remove last "+"
+
+        const block = document.createElement('div');
+        block.className = 'char-block';
+        block.innerHTML = `
+          <div class="label">Character: '${char}'</div>
+          <div>ASCII Code: ${ascii}</div>
+          <div>Binary: ${binary}</div>
+          <div>Explanation: ${explanation} = ${ascii}</div>
+          <div class="label">Visual:</div>
+        `;
+
+        // Create bulbs
+        for (let bit of binary) {
+          const bulb = document.createElement('div');
+          bulb.classList.add('bulb');
+          if (bit === '1') bulb.classList.add('on');
+          block.appendChild(bulb);
+        }
+
+        output.appendChild(block);
+      });
+    }
+  </script>
+
+</body>
+</html>

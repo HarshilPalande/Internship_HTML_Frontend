@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover Image Animation</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #img2 {
+      width: 200px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Hover on the image</h3>
+  <img src="Nature.jpg" id="img2">
+
+  <script>
+    $("#img2").hover(
+      function () {
+        $(this).animate({ left: "100px", width: "300px" }, 400);
+      },
+      function () {
+        $(this).animate({ left: "0px", width: "200px" }, 400);
+      }
+    );
+  </script>
+
+</body>
+</html>

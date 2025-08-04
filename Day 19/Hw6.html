@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#startBtn").click(function (){
+                $("#myImage").animate({
+                    left: "500px",
+                    width: "500px",      
+                    height: "500px"      
+                }, 5000); 
+            });
+
+            $("#stopBtn").click(function (){
+                $("#myImage").stop();
+            });
+        });
+    </script>
+
+    <style>
+        #myImage 
+        {
+            position: relative;
+            width: 150px;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+
+        button 
+        {
+            margin: 10px;
+        }
+    </style>
+
+    <title>Animation</title>
+</head>
+<body style="background-color: aliceblue;">
+    <button id="startBtn">Start Animation</button>
+    <button id="stopBtn">Stop Animation</button>
+    <br><br>
+    <img id="myImage" src="a.jpeg" alt="Sample Image">
+</body>
+</html>

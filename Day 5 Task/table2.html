@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Table</title>
+    <style>
+        body {
+            background-color: #f1f9ff; /* light blue background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 15px rgba(0,0,2,1.2);
+        }
+        th {
+            background-color: #003366;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+        tr:nth-child(even) {
+            background-color: #e7f3ff;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        tr:hover {
+            background-color: #d1ecf1;
+            cursor: pointer;
+        }
+        caption {
+            caption-side: top;
+            text-align: center;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>Student Information</caption>
+    <tr>
+        <th>Name</th>
+        <th>Gmail</th>
+        <th>Percentage</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+        <td>Harshil Palande</td>
+        <td>harshil.palande@gmail.com</td>
+        <td>80%</td>
+        <td>Andheri</td>
+    </tr>
+    <tr>
+        <td>Shreedhan Thakre</td>
+        <td>shreethakre@gmail.com</td>
+        <td>78%</td>
+        <td>Kalyan</td>
+    </tr>
+    <tr>
+        <td>Yuvraj Mahaskar</td>
+        <td>mahaskar.yuvraj@gmail.com</td>
+        <td>70%</td>
+        <td>Badlapur</td>
+    </tr>
+    <tr>
+        <td>Aayush Patil</td>
+        <td>aayush145@gmail.com</td>
+        <td>81%</td>
+        <td>Diva</td>
+    </tr>
+    <tr>
+        <td>Sahil Gaikar</td>
+        <td>sahil.gaikar@gmail.com</td>
+        <td>70%</td>
+        <td>Badlapur</td>
+    </tr>
+</table>
+
+</body>
+</html>

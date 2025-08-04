@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Candy Match Game</title>
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f06292;
+    }
+
+    #score {
+      font-size: 1.5em;
+      margin: 10px;
+      color: yellow;
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+      margin: auto;
+      width: 400px;
+    }
+
+    .tile {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #444;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🍭 Candy Match Game</h1>
+<div id="score">Score: 0</div>
+<div id="game-board"></div>
+
+<script>
+  const board = document.getElementById("game-board");
+  const scoreDisplay = document.getElementById("score");
+
+  const width = 8;
+  const tiles = [];
+  const candyColors = [
+    'url(red.png)',
+    'url(green.jpg)',
+    'url(yellow.webp)',
+    'url(blue.webp)',
+    'url(purple.webp)',
+    'url(orange.jpg)'
+  ];
+
+  let score = 0;
+  let firstTile = null;
+
+  // Create the board
+  function createBoard() {
+    for (let i = 0; i < width * width; i++) {
+      const tile = document.createElement("div");
+      tile.setAttribute("id", i);
+      tile.classList.add("tile");
+      tile.style.backgroundImage = candyColors[Math.floor(Math.random() * candyColors.length)];
+      tile.addEventListener("click", () => selectTile(tile));
+      board.appendChild(tile);
+      tiles.push(tile);
+    }
+  }
+
+  function selectTile(tile) {
+    if (!firstTile) {
+      firstTile = tile;
+      tile.style.border = "2px solid white";
+    } else if (firstTile === tile) {
+      firstTile.style.border = "1px solid #444";
+      firstTile = null;
+    } else {
+      swapTiles(firstTile, tile);
+      firstTile.style.border = "1px solid #444";
+      firstTile = null;
+    }
+  }
+
+  function swapTiles(tile1, tile2) {
+    const temp = tile1.style.backgroundImage;
+    tile1.style.backgroundImage = tile2.style.backgroundImage;
+    tile2.style.backgroundImage = temp;
+
+    setTimeout(() => {
+      const matched = checkMatches();
+      if (!matched) {
+        // Revert swap if no match
+        const revert = tile1.style.backgroundImage;
+        tile1.style.backgroundImage = tile2.style.backgroundImage;
+        tile2.style.backgroundImage = revert;
+      }
+    }, 200);
+  }
+
+  function checkMatches() {
+    let matched = false;
+
+    // Horizontal match
+    for (let i = 0; i < 64; i++) {
+      if (i % width > width - 3) continue;
+      const first = tiles[i].style.backgroundImage;
+      if (
+        first &&
+        tiles[i + 1].style.backgroundImage === first &&
+        tiles[i + 2].style.backgroundImage === first
+      ) {
+        tiles[i].style.backgroundImage = "";
+        tiles[i + 1].style.backgroundImage = "";
+        tiles[i + 2].style.backgroundImage = "";
+        matched = true;
+        score += 3;
+      }
+    }
+
+    // Vertical match
+    for (let i = 0; i < 64 - 2 * width; i++) {
+      const first = tiles[i].style.backgroundImage;
+      if (
+        first &&
+        tiles[i + width].style.backgroundImage === first &&
+        tiles[i + 2 * width].style.backgroundImage === first
+      ) {
+        tiles[i].style.backgroundImage = "";
+        tiles[i + width].style.backgroundImage = "";
+        tiles[i + 2 * width].style.backgroundImage = "";
+        matched = true;
+        score += 3;
+      }
+    }
+
+    scoreDisplay.textContent = `Score: ${score}`;
+    return matched;
+  }
+
+  function dropCandies() {
+    for (let i = 0; i < 64 - width; i++) {
+      if (tiles[i + width].style.backgroundImage === "") {
+        tiles[i + width].style.backgroundImage = tiles[i].style.backgroundImage;
+        tiles[i].style.backgroundImage = "";
+      }
+    }
+
+    for (let i = 0; i < width; i++) {
+      if (tiles[i].style.backgroundImage === "") {
+        tiles[i].style.backgroundImage = candyColors[Math.floor(Math.random() * candyColors.length)];
+      }
+    }
+  }
+
+  function gameLoop() {
+    dropCandies();
+    checkMatches();
+  }
+
+  createBoard();
+  setInterval(gameLoop, 300);
+</script>
+
+</body>
+</html>

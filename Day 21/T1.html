@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover Animate Image</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .hover-img {
+      position: relative;
+      width: 200px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="hoverEffect" class="hover-img" src="Nature.jpg" alt="Hover Image">
+
+  <script>
+    $(function() {
+      $('#hoverEffect').mouseenter(function() {
+        $(this).stop().animate({
+          marginLeft: '80px',
+          width: '300px',
+          height: '300px'
+        }, 800);
+      }).mouseleave(function() {
+        $(this).stop().animate({
+          marginLeft: '0px',
+          width: '200px',
+          height: '200px'
+        }, 800);
+      });
+    });
+  </script>
+
+</body>
+</html>

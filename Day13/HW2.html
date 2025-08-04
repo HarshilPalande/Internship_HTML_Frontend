@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Variant 1: Teal Theme -->
+  <style id="variant1">
+    body { background-color: #e6f0f2; font-family: 'Segoe UI', sans-serif; }
+    .btn-info { background-color: #008080; color: white; }
+    .btn-success { background-color: #006666; }
+    .btn-warning { background-color: #ffaa00; }
+    .btn-danger { background-color: #cc3300; }
+    .alert-info { background-color: #b3e0e0; color: #004d4d; }
+    .alert-success { background-color: #d0f0c0; color: #006600; }
+    .alert-warning { background-color: #fff0b3; color: #8a6d3b; }
+    .alert-danger { background-color: #ffd6cc; color: #a94442; }
+  </style>
+
+  <!-- Variant 2: Purple/Grey Theme -->
+  <!-- Replace id="variant1" with id="variant2" to activate -->
+  <style id="variant2" disabled>
+    body { background-color: #f3f2f7; font-family: 'Arial', sans-serif; }
+    .btn-info { background-color: #6a5acd; color: white; }
+    .btn-success { background-color: #4b0082; }
+    .btn-warning { background-color: #d8bfd8; color: #333; }
+    .btn-danger { background-color: #800080; }
+    .alert-info { background-color: #e6e6fa; color: #4b0082; }
+    .alert-success { background-color: #c1ffc1; color: #2e8b57; }
+    .alert-warning { background-color: #ffe4e1; color: #8b0000; }
+    .alert-danger { background-color: #f08080; color: #800000; }
+  </style>
+
+  <!-- Variant 3: Blue Sky Theme -->
+  <style id="variant3" disabled>
+    body { background-color: #f0faff; font-family: 'Roboto', sans-serif; }
+    .btn-info { background-color: #3399ff; color: white; }
+    .btn-success { background-color: #33ccff; }
+    .btn-warning { background-color: #66ccff; }
+    .btn-danger { background-color: #0099cc; }
+    .alert-info { background-color: #cceeff; color: #005580; }
+    .alert-success { background-color: #b3ffff; color: #004d4d; }
+    .alert-warning { background-color: #e0f7ff; color: #333; }
+    .alert-danger { background-color: #99e6ff; color: #003344; }
+  </style>
+
+  <!-- Variant 4: Earthy Theme -->
+  <style id="variant4" disabled>
+    body { background-color: #fcf8f0; font-family: 'Georgia', serif; }
+    .btn-info { background-color: #a0522d; color: white; }
+    .btn-success { background-color: #8b4513; }
+    .btn-warning { background-color: #cd853f; }
+    .btn-danger { background-color: #a52a2a; }
+    .alert-info { background-color: #f5f5dc; color: #5c4033; }
+    .alert-success { background-color: #f0e68c; color: #556b2f; }
+    .alert-warning { background-color: #fffacd; color: #8b8000; }
+    .alert-danger { background-color: #f4cccc; color: #7f0000; }
+  </style>
+
+  <!-- Variant 5: Mint & Coral Theme -->
+  <style id="variant5" disabled>
+    body { background-color: #f8fffb; font-family: 'Verdana', sans-serif; }
+    .btn-info { background-color: #2ec4b6; color: white; }
+    .btn-success { background-color: #0b8457; }
+    .btn-warning { background-color: #ff9f1c; }
+    .btn-danger { background-color: #e71d36; }
+    .alert-info { background-color: #cbf3f0; color: #007c91; }
+    .alert-success { background-color: #b2f7ef; color: #0b4238; }
+    .alert-warning { background-color: #ffe8cc; color: #664400; }
+    .alert-danger { background-color: #ffd6db; color: #8c1c13; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="margin-top: 20px; color: #333;">User Interaction Showcase</h2>
+    <button type="button" class="btn btn-info btn-block">Block-level Button</button><br>
+    <button type="button" class="btn btn-info btn-lg">Large Info Button</button>
+    <button type="button" class="btn btn-info btn-sm">Small Info Button</button>
+    <button type="button" class="btn">Basic Button</button>
+    <a href="#" class="btn btn-info disabled" role="button">Disabled Button</a>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button><br><br>
+
+    <div class="alert alert-success">
+      <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+    </div>
+    <div class="alert alert-info">
+      <strong>Info!</strong> You should <a href="#" class="alert-link">read this message</a>.
+    </div>
+    <div class="alert alert-warning">
+      <strong>Warning!</strong> You should <a href="#" class="alert-link">read this message</a>.
+    </div>
+    <div class="alert alert-danger">
+      <strong>Danger!</strong> You should <a href="#" class="alert-link">read this message</a>.
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" role="progressbar" style="width: 30%">30% Complete</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" style="width: 50%">50% Complete</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" style="width: 70%">70% Complete</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%">100% Complete</div>
+    </div>
+  </div>
+</body>
+</html>

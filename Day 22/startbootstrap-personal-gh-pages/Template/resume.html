@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Harshil's tech portfolio showcasing education, skills, and qualifications.">
+  <title>Harshil - Tech Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(270deg, #1f1c2c, #928dab, #3f51b5, #ff4081);
+      background-size: 800% 800%;
+      animation: gradientFlow 15s ease infinite;
+      color: #f4f4f4;
+      padding: 2rem 1rem;
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #f70291, #1cfcb5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .section {
+      position: relative;
+      padding: 2rem 2rem;
+      margin: 3rem 0;
+      background: #1e2a38;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .ribbon {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      background: linear-gradient(to right, #ff6ec4, #7873f5);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-weight: bold;
+      border-top-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .timeline {
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      display: none;
+    }
+
+    .timeline-item h4 {
+      color: #8be9fd;
+    }
+
+    .timeline-item p {
+      margin-top: 0.3rem;
+      color: #ddd;
+    }
+
+    .flex-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .pill {
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      background: linear-gradient(to right, #ff6ec4, #7873f5);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .pill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .qualifications-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .qualification-card {
+      background: #2a3550;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      flex: 1 1 45%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .qualification-card h4 {
+      color: #fcb69f;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .qualification-card p {
+      color: #ffe082;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Harshil - Tech Portfolio</h1>
+    
+    <div class="section">
+      <div class="ribbon"><i class="bi bi-briefcase-fill"></i> Experience</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4><i class="bi bi-stars"></i> Fresher</h4>
+          <strong>Aspiring IT Professional</strong>
+          <p><i class="bi bi-geo-alt-fill"></i> Open to Opportunities — Maharashtra, India</p>
+          <p>I am a passionate and self-motivated fresher looking to gain practical experience in the IT industry. Eager to apply my knowledge of web development, networking, and software tools in real-world environments.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="section">
+      <div class="ribbon"><i class="bi bi-mortarboard-fill"></i> Education</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>2023-2025(Present)</h4>
+          <strong>G.V Acharya Polytechnic</strong>
+          <p><i class="bi bi-geo-fill"></i> Shelu, Maharashtra</p>
+          <p>Diploma in Information Technology. Gaining foundational knowledge in software development, web technologies, and database systems.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>2011 - 2023</h4>
+          <strong>ST Dominic Savio High School</strong>
+          <p><i class="bi bi-geo-fill"></i> Andheri (East), Mumbai</p>
+          <p>Completed SSC with strong academic performance and active participation in technical and extracurricular activities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="ribbon"><i class="bi bi-tools"></i> Skills</div>
+      <div class="flex-grid">
+        <div class="pill">Good Listener</div>
+        <div class="pill">Fast Grasping Power</div>
+        <div class="pill">Honest and Trustworthy</div>
+        <div class="pill">Creative Thinking</div>
+        <div class="pill">Leadership Potential</div>
+        <div class="pill">Calm Under Pressure</div>
+        <div class="pill">Problem Solver</div>
+        <div class="pill">Responsible</div>
+        <div class="pill">Eager to Learn</div>
+        <div class="pill">Punctual</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="ribbon"><i class="bi bi-code-slash"></i> Languages</div>
+      <div class="flex-grid">
+        <div class="pill">HTML</div>
+        <div class="pill">CSS</div>
+        <div class="pill">JavaScript</div>
+        <div class="pill">Python</div>
+        <div class="pill">C & C++</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="ribbon"><i class="bi bi-award-fill"></i> Extra Qualifications</div>
+      <div class="qualifications-grid">
+        <div class="qualification-card">
+          <h4>Scholarship Exam</h4>
+          <p>Scored 81%</p>
+        </div>
+        <div class="qualification-card">
+          <h4>Dr. Homi Bhabha Exam (6th)</h4>
+          <p>Scored 72%</p>
+        </div>
+        <div class="qualification-card">
+          <h4>Albert Einstein Exam</h4>
+          <p>Scored 92%</p>
+        </div>
+        <div class="qualification-card">
+          <h4>Math State Level Olympiad</h4>
+          <p>Scored 88%</p>
+        </div>
+        <div class="qualification-card">
+          <h4>Online Scholarship Exam</h4>
+          <p>Scored 68%</p>
+        </div>
+        <div class="qualification-card">
+          <h4>Dr. Homi Bhabha Exam (9th)</h4>
+          <p>Scored 68%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Harshil. All rights reserved.
+  </footer>
+</body>
+</html>

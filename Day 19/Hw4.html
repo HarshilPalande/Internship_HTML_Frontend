@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #myImage {
+            width: 300px;
+            margin-bottom: 20px;
+            transition: all 1s ease; /* smooth transition */
+        }
+
+        button {
+            margin-right: 10px;
+        }
+    </style>
+    <title>Slide Image Up & Down</title>
+</head>
+<body style="background-color: lavenderblush;">
+    <h1>Slide Image</h1>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <br>
+    <img id="myImage" src="doremon.jpg" alt="Sample Image">
+
+    <script>
+        $(document).ready(function (){
+            $("#slideUpBtn").click(function (){
+                $("#myImage").css({
+                    "width": "100%",
+                    "height": "100vh",
+                    "position": "fixed",
+                    "top": "0",
+                    "left": "0",
+                    "z-index": "-1",
+                    "opacity": "0.3", 
+                });
+            });
+
+            $("#slideDownBtn").click(function () 
+            {
+                $("#myImage").removeAttr("style"); 
+            });
+        });
+    </script>
+</body>
+</html>
